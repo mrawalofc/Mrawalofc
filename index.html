@@ -528,6 +528,35 @@
     </div>
 
     <script>
+        </script>
+    <!-- Audio Player -->
+    <div class="audio-player" style="position: fixed; bottom: 20px; right: 20px; z-index: 100; background: rgba(0, 0, 0, 0.7); padding: 15px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <span style="color: #ff69b4; font-size: 20px;">🎵</span>
+            <span style="color: white; font-size: 14px;">Now Playing</span>
+        </div>
+        <audio id="bgMusic" controls loop style="width: 250px; height: 40px;">
+            <source src="Dhun - (Raag.Fm).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div style="margin-top: 10px; text-align: center;">
+            <button id="playBtn" onclick="toggleMusic()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; color: white; padding: 8px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.3s;">▶ Play</button>
+        </div>
+    </div>
+
+    <!-- Visit Time Display -->
+    <div class="visit-time" style="position: fixed; top: 20px; right: 20px; z-index: 100; background: rgba(0, 0, 0, 0.7); padding: 15px 25px; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); color: white; font-family: 'Segoe UI', sans-serif;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 5px;">
+            <span style="color: #ffd700; font-size: 18px;">⏱️</span>
+            <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.7);">Visit Duration</span>
+        </div>
+        <div id="visitTimer" style="font-size: 24px; font-weight: bold; background: linear-gradient(45deg, #ffd700, #ff69b4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: 'Courier New', monospace;">00:00:00</div>
+        <div style="margin-top: 8px; font-size: 11px; color: rgba(255,255,255,0.5); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px;">
+            Started: <span id="startTime"></span>
+        </div>
+    </div>
+
+    <script>
         // Music Player Controls
         const audio = document.getElementById('bgMusic');
         const playBtn = document.getElementById('playBtn');
